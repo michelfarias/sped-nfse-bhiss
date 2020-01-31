@@ -16,8 +16,8 @@ namespace NFePHP\NFSeBHISS\Common;
  */
 
 use NFePHP\Common\Certificate;
-use NFePHP\NFSeBHISS\RpsInterface;
 use NFePHP\Common\DOMImproved as Dom;
+use NFePHP\NFSeBHISS\RpsInterface;
 use NFePHP\NFSeBHISS\Common\Signer;
 use NFePHP\NFSeBHISS\Common\Soap\SoapInterface;
 use NFePHP\NFSeBHISS\Common\Soap\SoapCurl;

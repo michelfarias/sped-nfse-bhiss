@@ -15,11 +15,11 @@ namespace NFePHP\NFSeBHISS;
  * @link      http://github.com/nfephp-org/sped-nfse-bhiss for the canonical source repository
  */
 
-use NFePHP\NFSeBHISS\Common\Tools as BaseTools;
-use NFePHP\NFSeBHISS\RpsInterface;
 use NFePHP\Common\Certificate;
 use NFePHP\Common\Validator;
 use NFePHP\NFSeBHISS\Common\Signer;
+use NFePHP\NFSeBHISS\Common\Tools as BaseTools;
+use NFePHP\NFSeBHISS\RpsInterface;
 
 class Tools extends BaseTools
 {
