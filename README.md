@@ -2,10 +2,9 @@
 
 Biblioteca para comunicação com webservices do Projeto NFSe BHISS
 
-> NOTA: Este repositório foi separado do sped-nfe-nacional por diferenças de estruturas.
+> NOTA: Este repositório foi separado do sped-nfe-nacional devido a diferenças de estruturas entre os projetos BHISS e Nacional.
 
 ## BETHA TESTES
-
 
 [![Latest Stable Version][ico-stable]][link-packagist]
 [![Build Status][ico-travis]][link-travis]

@@ -85,7 +85,7 @@ class Standardize
             }
         }
         throw new InvalidArgumentException(
-            "Este xml não pertence ao projeto NFSe Nacional."
+            "Este xml não pertence ao projeto NFSe BHISS."
         );
     }
     
