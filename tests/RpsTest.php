@@ -1,8 +1,8 @@
 <?php
 
-namespace NFePHP\NFSeNac\Tests;
+namespace NFePHP\NFSeBHISS\Tests;
 
-use NFePHP\NFSeNac\Rps;
+use NFePHP\NFSeBHISS\Rps;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 use ReflectionMethod;
@@ -72,7 +72,7 @@ class RpsTest extends TestCase
     public function testCanInstantiate()
     {
         $rps = new Rps();
-        $this->assertInstanceOf('NFePHP\NFSeNac\Rps', $rps);
+        $this->assertInstanceOf('NFePHP\NFSeBHISS\Rps', $rps);
     }
     
     /**
