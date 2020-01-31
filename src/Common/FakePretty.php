@@ -7,7 +7,7 @@ namespace NFePHP\NFSeBHISS\Common;
  * for analises and debugging only
  *
  * @category  API
- * @package   NFePHP\NFseNac
+ * @package   NFePHP\NFSeBHISS
  * @copyright NFePHP Copyright (c) 2017
  * @license   http://www.gnu.org/licenses/lgpl.txt LGPLv3+
  * @license   https://opensource.org/licenses/MIT MIT

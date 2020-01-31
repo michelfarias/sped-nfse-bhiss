@@ -111,6 +111,7 @@ class SoapCurl extends SoapBase implements SoapInterface
                 . $this->getFaultString($this->responseBody)
             );
         }
+        return $this->responseBody;
     }
     
     /**
