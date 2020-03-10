@@ -51,8 +51,8 @@ $jsonSchema = '{
             "pattern": "^[1-6]{1}$"
         },
         "regimeespecialtributacao": {
-            "required": true,
-            "type": "integer",
+            "required": false,
+            "type": ["integer","null"],
             "pattern": "^[1-6]{1}$"
         },
         "optantesimplesnacional": {
@@ -342,7 +342,7 @@ $std->servico->valores->descontoincondicionado = 10.00;
 $std->servico->valores->descontocondicionado = 10.00;
 
 $std->Intermediarioservico = new \stdClass();
-$std->Intermediarioservico->RazaoSocial = 'INSCRICAO DE TESTE SIATU - D AGUA -PAULINO S'; 
+$std->Intermediarioservico->RazaoSocial = 'INSCRICAO DE TESTE SIATU - D AGUA -PAULINO S';
 $std->Intermediarioservico->Cnpj = '99999999000191';
 $std->Intermediarioservico->InscricaoMunicipal = '8041700010';
 
