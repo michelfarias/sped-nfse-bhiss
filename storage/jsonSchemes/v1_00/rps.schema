@@ -39,8 +39,8 @@
             "pattern": "^[1-6]{1}$"
         },
         "regimeespecialtributacao": {
-            "required": true,
-            "type": "integer",
+            "required": false,
+            "type": ["integer","null"],
             "pattern": "^[1-6]{1}$"
         },
         "optantesimplesnacional": {

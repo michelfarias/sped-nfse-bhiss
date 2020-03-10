@@ -46,13 +46,13 @@ class Factory
     public function __construct(stdClass $std)
     {
         $this->std = $std;
-        
+
         $this->dom = new Dom('1.0', 'UTF-8');
         $this->dom->preserveWhiteSpace = false;
         $this->dom->formatOutput = false;
         $this->rps = $this->dom->createElementNS('http://www.abrasf.org.br/nfse.xsd', 'Rps');
     }
-    
+
     /**
      * Add config
      * @param \stdClass $config
@@ -61,7 +61,7 @@ class Factory
     {
         $this->config = $config;
     }
-    
+
     /**
      * Builder, converts sdtClass Rps in XML Rps
      * NOTE: without Prestador Tag
@@ -77,9 +77,9 @@ class Factory
         $att = $this->dom->createAttribute('Id');
         $att->value = "rps{$num}";
         $infRps->appendChild($att);
-        
+
         $this->addIdentificacao($infRps);
-        
+
         $this->dom->addChild(
             $infRps,
             "DataEmissao",
@@ -95,8 +95,10 @@ class Factory
         $this->dom->addChild(
             $infRps,
             "RegimeEspecialTributacao",
-            $this->std->regimeespecialtributacao,
-            true
+            !empty($this->std->regimeespecialtributacao)
+                ? $this->std->regimeespecialtributacao
+                : null,
+            false
         );
         $this->dom->addChild(
             $infRps,
@@ -116,18 +118,18 @@ class Factory
             $this->std->status,
             true
         );
-        
+
         $this->addServico($infRps);
         $this->addPrestador($infRps);
         $this->addTomador($infRps);
         $this->addIntermediario($infRps);
         $this->addConstrucao($infRps);
-        
+
         $this->rps->appendChild($infRps);
         $this->dom->appendChild($this->rps);
         return $this->dom->saveXML();
     }
-    
+
     /**
      * Includes Identificacao TAG in parent NODE
      * @param DOMNode $parent
@@ -156,7 +158,7 @@ class Factory
         );
         $parent->appendChild($node);
     }
-    
+
     /**
      * Includes prestador
      * @param DOMNode $parent
@@ -188,7 +190,7 @@ class Factory
         );
         $parent->appendChild($node);
     }
-    
+
     /**
      * Includes Servico TAG in parent NODE
      * @param DOMNode $parent
@@ -298,7 +300,7 @@ class Factory
             false
         );
         $node->appendChild($valnode);
-        
+
         $this->dom->addChild(
             $node,
             "ItemListaServico",
@@ -326,7 +328,7 @@ class Factory
 
         $parent->appendChild($node);
     }
-    
+
     /**
      * Includes Tomador TAG in parent NODE
      * @param DOMNode $parent
@@ -338,7 +340,7 @@ class Factory
         }
         $tom = $this->std->tomador;
         $end = $this->std->tomador->endereco;
-        
+
         $node = $this->dom->createElement('Tomador');
         $ide = $this->dom->createElement('IdentificacaoTomador');
         $cpfcnpj = $this->dom->createElement('CpfCnpj');
@@ -417,7 +419,7 @@ class Factory
         $node->appendChild($endereco);
         $parent->appendChild($node);
     }
-    
+
     /**
      * Includes Intermediario TAG in parent NODE
      * @param DOMNode $parent
@@ -460,7 +462,7 @@ class Factory
         );
         $parent->appendChild($node);
     }
-    
+
     /**
      * Includes Construcao TAG in parent NODE
      * @param DOMNode $parent
